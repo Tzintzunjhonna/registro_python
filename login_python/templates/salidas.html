@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/registro.css">
+
+    <title>Administrador</title>
+</head>
+<body>
+    <div class="form"> 
+        <div class="mensaje">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+            {% endif %}
+            {% endwith %} 
+        </div>
+        <a href="salir" id="btn-registrate">Cerrar Sesión</a>
+        <div class="entradas-salidas">
+            <table>
+                <tr><h3>Salidas</h3></tr>
+                        <tr> 
+                            <td><h4>Correo</h47></td>
+                            <td><h4>Hora</h4></td>
+                            <td><h4>Fecha</h4></td>
+                        </tr>
+                </thead>
+                <tbody>
+                        {% for contact in contacts %}
+                        <tr>
+                            <td class="avr">{{ contact.1 }}</td>
+                            <td class="avr">{{ contact.2 }}</td>
+                            <td class="avr">{{ contact.3 }}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+</div>
+    </div>
+     
+</body>
+</html>

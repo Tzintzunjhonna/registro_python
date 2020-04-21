@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><style id="stndz-style"></style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../static/css/registro.css">
+
+    <title>Acceso denegado</title>
+</head>
+<body>
+    <header>
+        <form >
+            <div class="mensaje_error">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+                {% endif %}
+                {% endwith %} 
+            </div>
+            <h3>No tienes permiso para acceder a este sitio</h3>
+        </form>
+    </header>
+</body>
+</html>
